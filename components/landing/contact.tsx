@@ -1,87 +1,47 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { MessageCircle } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="w-full bg-white py-16 md:py-24">
+    <section className="w-full bg-white py-12 md:py-20">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Unsicher, ob das zu deinem Studio passt?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Schreib uns direkt. Wir zeigen dir in ein paar Minuten, wie deine Treuekarte im Handy aussehen kann – auf Deutsch oder Vietnamesisch.
-            </p>
+        <div className="text-center mb-12 md:mb-16">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-gold/10 flex items-center justify-center mx-auto mb-6">
+            <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-brand-gold" />
           </div>
+          <h2 className="text-2xl md:text-4xl font-bold text-brand-navy mb-4">
+            Demo anfragen
+          </h2>
+          <p className="text-base md:text-lg text-brand-body/80 max-w-2xl mx-auto">
+            Lass uns gemeinsam schauen, ob digitale Stempelkarten zu deinem Business passen
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Buttons */}
-            <div className="space-y-4">
-              <Button 
-                size="lg"
-                className="w-full bg-[#1e3a5f] hover:bg-[#1e3a5f]/90 text-white text-base py-7 h-auto shadow-lg hover:shadow-xl transition-shadow rounded-xl"
-                asChild
-              >
-                <a 
-                  href="https://zalo.me/your-zalo-id" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="Auf Zalo schreiben"
-                >
-                  Jetzt auf Zalo schreiben
-                </a>
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="w-full border-2 border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#1e3a5f]/5 text-base py-7 h-auto shadow-md hover:shadow-lg transition-shadow rounded-xl"
-                asChild
-              >
-                <a 
-                  href="https://wa.me/491234567890?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20digitale%20Stempelkarte" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="Auf WhatsApp schreiben"
-                >
-                  Jetzt auf WhatsApp schreiben
-                </a>
-              </Button>
-            </div>
+        <div className="bg-gradient-to-br from-white to-[hsl(var(--brand-section))] rounded-xl p-6 md:p-8 shadow-brand-soft border border-brand-border text-center">
+          <Button
+            size="lg"
+            className="bg-brand-gold text-brand-body hover:bg-brand-gold-hover text-base px-8 py-6 h-auto shadow-brand-soft rounded-xl mb-4"
+            asChild
+          >
+            <a
+              href="https://wa.me/491234567890?text=Hallo%2C%20ich%20m%C3%B6chte%20eine%20Demo%20anfragen"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Jetzt auf WhatsApp schreiben"
+            >
+              Jetzt auf WhatsApp schreiben
+            </a>
+          </Button>
 
-            {/* Optional Formular */}
-            <Card className="border-2 border-gray-200 shadow-md rounded-xl">
-              <CardContent className="p-6 space-y-4">
-                <h3 className="font-semibold text-gray-900 mb-4">Oder schreib uns hier:</h3>
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Dein Name</Label>
-                    <Input id="name" placeholder="Name" className="mt-1" />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Telefonnummer / Zalo</Label>
-                    <Input id="phone" placeholder="Telefonnummer" className="mt-1" />
-                  </div>
-                  <div>
-                    <Label htmlFor="salon">Name deines Studios / Stadt</Label>
-                    <Input id="salon" placeholder="Studio / Stadt" className="mt-1" />
-                  </div>
-                  <div>
-                    <Label htmlFor="message">Nachricht</Label>
-                    <Textarea id="message" placeholder="Deine Nachricht..." className="mt-1 min-h-[100px]" />
-                  </div>
-                  <Button 
-                    className="w-full bg-[#1e3a5f] hover:bg-[#1e3a5f]/90 text-white shadow-md hover:shadow-lg transition-shadow rounded-xl"
-                  >
-                    Nachricht senden
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <p className="text-sm md:text-base text-brand-body/70">
+            Oder schreib an:{" "}
+            <a
+              href="mailto:info@temora.de"
+              className="text-brand-navy hover:text-brand-gold transition-colors underline"
+            >
+              info@temora.de
+            </a>
+          </p>
         </div>
       </div>
     </section>
